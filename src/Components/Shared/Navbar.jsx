@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { MdAccessTime, MdOutlineHome } from "react-icons/md";
+import { VscGraphLine } from "react-icons/vsc";
 
 const NavBar = () => {
   const pathName = usePathname();
@@ -12,7 +14,7 @@ const NavBar = () => {
           href="/"
           className={` font-bold px-5 ${pathName === "/" ? "btn bg-[#244d3f] text-white" : ""}`}
         >
-          Home
+          <MdOutlineHome size={20} /> Home
         </Link>
       </li>
       <li>
@@ -20,7 +22,7 @@ const NavBar = () => {
           href="/timeline"
           className={` font-bold px-5 ${pathName === "/timeline" ? "btn bg-[#244d3f] text-white" : ""}`}
         >
-          Timeline
+          <MdAccessTime size={20} /> Timeline
         </Link>
       </li>
       <li>
@@ -28,7 +30,7 @@ const NavBar = () => {
           href="/stats"
           className={` font-bold px-5 ${pathName === "/stats" ? "btn bg-[#244d3f] text-white" : ""}`}
         >
-          Stats
+          <VscGraphLine size={20} /> Stats
         </Link>
       </li>
     </>
