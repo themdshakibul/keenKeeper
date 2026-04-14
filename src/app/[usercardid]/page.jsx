@@ -1,14 +1,11 @@
+import QuickCheckIn from "@/Components/QuickCheckIn/QuickCheckIn";
 import Image from "next/image";
-import DamiImage from "../../Assets/Images/Ellipse.png";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { LuArchive } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { MdCall, MdVideocam } from "react-icons/md";
-import { BiMessageDetail } from "react-icons/bi";
 
 const UserCardIdPage = async ({ params }) => {
   const { usercardid } = await params;
-  console.log(usercardid);
 
   const res = await fetch("http://localhost:3000/yourfriends.json", {
     cache: "no-store",
@@ -125,23 +122,11 @@ const UserCardIdPage = async ({ params }) => {
           </div>
 
           <div className="bg-base-200 border border-gray-300 rounded-xl p-5">
-            <h3 className="text-3xl font-semibold mb-5 text-[#244d3f]">
-              Quick Check-In
-            </h3>
-            <div className="grid md:grid-cols-3 gap-5">
-              <button className="flex flex-col items-center justify-center gap-3 border border-gray-300 rounded-xl py-5 ">
-                <MdCall size={30} className="text-gray-600" />
-                <span className="text-2xl font-medium">Call</span>
-              </button>
-              <button className="flex flex-col items-center justify-center gap-3 border border-gray-300 rounded-xl py-5">
-                <BiMessageDetail size={30} className="text-gray-600" />
-                <span className="text-2xl font-medium">Text</span>
-              </button>
-              <button className="flex flex-col items-center justify-center gap-3 border border-gray-300 rounded-xl py-5">
-                <MdVideocam size={30} className="text-gray-600" />
-                <span className="text-2xl font-medium">Video</span>
-              </button>
-            </div>
+            <QuickCheckIn
+              key={friendDetails.name}
+              friendDetails={friendDetails}
+              id={friendDetails.id}
+            />
           </div>
         </div>
       </div>

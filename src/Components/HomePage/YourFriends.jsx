@@ -1,6 +1,3 @@
-import Image from "next/image";
-import DamiImage from "../../Assets/Images/Ellipse.png";
-import Link from "next/link";
 import FriendsCards from "./FriendsCards";
 
 const YourFriends = async () => {

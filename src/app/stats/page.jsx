@@ -11,7 +11,7 @@ const StatsPage = () => {
   return (
     <section>
       <div className="container mx-auto px-2 pt-5 pb-10">
-        <header className="space-y-5">
+        <header className="space-y-5 mb-10">
           <h2 className="text-3xl md:text-5xl font-bold">
             Friendship Analytics
           </h2>
@@ -24,7 +24,7 @@ const StatsPage = () => {
           <PieChart
             style={{
               width: "100%",
-              maxWidth: "500px",
+              maxWidth: "400px",
               maxHeight: "80vh",
               aspectRatio: 1,
             }}
@@ -40,7 +40,7 @@ const StatsPage = () => {
               dataKey="value"
               isAnimationActive={true}
             />
-            <Tooltip />
+            <Tooltip className="mt-5" />
             <Legend />
           </PieChart>
         </div>

@@ -1,19 +1,39 @@
-import { createContext, useState } from "react";
+"use client";
 
-const contextProveider = createContext();
+import { createContext, useContext, useState } from "react";
 
-const ProveiderContext = ({ children }) => {
-//   const [click, setClick] = useState([]);
+const ProveiderContext = createContext();
 
-  const data = {
-    
+export const ContextProvider = ({ children }) => {
+  const [clicks, setClicks] = useState([]);
+
+  const interaction = (type, friendDetails) => {
+    const now = new Date();
+
+    const newData = {
+      id: Date.now(),
+      type,
+      friendDetails,
+      friendName: friendDetails.name,
+      date: new Date().toDateString(),
+      time: now.toLocaleTimeString(),
+    };
+
+    setClicks((prev) => [newData, ...prev]);
+  };
+
+  const value = {
+    clicks,
+    interaction,
   };
 
   return (
-    <contextProveider.Provider value={data}>
+    <ProveiderContext.Provider value={value}>
       {children}
-    </contextProveider.Provider>
+    </ProveiderContext.Provider>
   );
 };
 
-export default ProveiderContext;
+export const useHooks = () => {
+  return useContext(ProveiderContext);
+};
