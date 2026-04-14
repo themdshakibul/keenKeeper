@@ -11,7 +11,10 @@ const FriendsCards = ({ friend }) => {
 
   return (
     <section>
-      <Link href={`/${friend.id}`}  className="bg-base-300 p-7 flex flex-col items-center gap-3 rounded-2xl border border-gray-200 h-full cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:border-gray-400 hover:bg-base-200">
+      <Link
+        href={`/${friend.id}`}
+        className="bg-base-300 p-7 flex flex-col items-center gap-3 rounded-2xl border border-gray-200 h-full cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:border-gray-400 hover:bg-base-200"
+      >
         <Image
           width={150}
           height={150}

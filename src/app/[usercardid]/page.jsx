@@ -13,8 +13,17 @@ const UserCardIdPage = async ({ params }) => {
   const res = await fetch("http://localhost:3000/yourfriends.json", {
     cache: "no-store",
   });
-  const friendDetails = await res.json();
-  console.log(friendDetails);
+  const friends = await res.json();
+
+  const friendDetails = friends.find(
+    (friend) => friend.id === Number(usercardid),
+  );
+
+  const base = {
+    almost_due: "bg-yellow-400 text-white",
+    on_track: "bg-green-700 text-white",
+    overdue: "bg-red-500 text-white",
+  };
 
   return (
     <section className="container mx-auto px-2 p-3 sm:p-4 md:p-6">
@@ -33,21 +42,27 @@ const UserCardIdPage = async ({ params }) => {
             </h3>
             <div className="flex flex-col w-fit items-center gap-5">
               <span className="px-3 py-0.5 rounded-full text-xl font-semibold bg-red-100 text-red-600 uppercase">
-                Overdue
+                {friendDetails.status}
               </span>
               <div className="flex items-center justify-center gap-5">
-                <span className="px-3 py-0.5 rounded-full text-xl font-semibold bg-green-100 text-green-700 uppercase">
-                  Family
-                </span>
-                <span className="px-3 py-0.5 rounded-full text-xl font-semibold bg-green-100 text-green-700 uppercase">
-                  Family
-                </span>
+                {friendDetails.tags.map((tag, ind) => (
+                  <span
+                    key={ind}
+                    className={`px-3 py-0.5 rounded-full text-xl font-semibold bg-green-100 text-green-700 uppercase ${
+                      base[friendDetails.status] || "bg-gray-400 text-white"
+                    }`}
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
             <p className="text-xl text-gray-500 italic text-center">
-              Former colleague, great mentor
+              {friendDetails.bio}
             </p>
-            <p className="text-xl text-gray-400">Preferred: email</p>
+            <p className="text-xl text-gray-400">
+              Preferred: {friendDetails.email}
+            </p>
           </div>
 
           <div className="flex flex-col lg:flex-col gap-2 sm:gap-3 flex-1 lg:flex-none">
@@ -70,7 +85,7 @@ const UserCardIdPage = async ({ params }) => {
           <div className="grid md:grid-cols-3 gap-5">
             <div className="flex flex-col items-center justify-center bg-base-200 border border-gray-300 rounded-xl p-8 text-center">
               <h2 className="text-3xl md:text-4xl font-black text-[#244d3f]">
-                62
+                {friendDetails.days_since_contact}
               </h2>
               <p className="text-xl font-semibold text-gray-500 mt-2 leading-tight">
                 Days Since Contact
@@ -78,7 +93,7 @@ const UserCardIdPage = async ({ params }) => {
             </div>
             <div className="flex flex-col items-center justify-center bg-base-200 border border-gray-300 rounded-xl p-8 text-center">
               <h2 className="text-3xl md:text-4xl font-black text-[#244d3f]">
-                30
+                {friendDetails.goal}
               </h2>
               <p className="text-xl font-semibold text-gray-500 mt-2 leading-tight">
                 Goal (Days)
@@ -86,7 +101,7 @@ const UserCardIdPage = async ({ params }) => {
             </div>
             <div className="flex flex-col items-center justify-center bg-base-200 border border-gray-300 rounded-xl p-8 text-center">
               <h2 className="text-3xl md:text-4xl font-black text-[#244d3f]">
-                Feb 27, 2026
+                {friendDetails.next_due_date}
               </h2>
               <p className="text-xl font-semibold text-gray-500 mt-2 leading-tight">
                 Days Since Contact
@@ -103,7 +118,9 @@ const UserCardIdPage = async ({ params }) => {
             </div>
             <p className="text-xl text-gray-500">
               Connect every{" "}
-              <span className="font-bold text-gray-700">30 days</span>
+              <span className="font-bold text-gray-700">
+                {friendDetails.goal} days
+              </span>
             </p>
           </div>
 
