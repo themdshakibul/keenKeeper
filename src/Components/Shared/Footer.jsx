@@ -5,7 +5,7 @@ import { RiTwitterXLine } from "react-icons/ri";
 const Footer = () => {
   return (
     <section>
-      <footer className="bg-[#244d3f] text-white ">
+      <footer className="bg-[#244d3f] text-white">
         <div className="container mx-auto px-2  flex flex-col items-center justify-center space-y-5 text-center pt-20 pb-10">
           <aside className="space-y-5">
             <h1 className="text-4xl md:text-6xl font-bold">KeenKeeper</h1>

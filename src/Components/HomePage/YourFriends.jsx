@@ -1,0 +1,26 @@
+import Image from "next/image";
+import DamiImage from "../../Assets/Images/Ellipse.png";
+import Link from "next/link";
+import FriendsCards from "./FriendsCards";
+
+const YourFriends = async () => {
+  const res = await fetch("http://localhost:3000/yourfriends.json", {
+    cache: "no-store",
+  });
+  const friends = await res.json();
+
+  return (
+    <section>
+      <div className="container mx-auto px-2 mb-20">
+        <h2 className="text-3xl font-bold mb-5">Your Friends</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+          {friends.map((friend) => (
+            <FriendsCards key={friend.id} friend={friend} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default YourFriends;

@@ -1,6 +1,6 @@
-import Card from "@/Components/HomePage/Card";
 import Header from "@/Components/HomePage/Header";
 import TotalDetails from "@/Components/HomePage/TotalDetails";
+import YourFriends from "@/Components/HomePage/YourFriends";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
       <div>
         <Header />
         <TotalDetails />
-        <Card />
+        <YourFriends />
       </div>
     </section>
   );
