@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { LuArchive } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { getFriends } from "@/lib/friends";
 
 export const metadata = {
   title: "KeenKeeper | Friends Details page",
@@ -13,11 +14,7 @@ export const metadata = {
 const UserCardIdPage = async ({ params }) => {
   const { usercardid } = await params;
 
-  const res = await fetch("http://localhost:3000/yourfriends.json", {
-    cache: "no-store",
-  });
-  const friends = await res.json();
-
+  const friends = await getFriends();
   const friendDetails = friends.find(
     (friend) => friend.id === Number(usercardid),
   );

@@ -1,8 +1,8 @@
-import { getFriends } from "@/lib/friends";
 import FriendsCards from "./FriendsCards";
+import { getFriends } from "@/lib/friends";
 
 const YourFriends = async () => {
-  const friends = getFriends();
+  const friends = await getFriends();
 
   return (
     <section>
