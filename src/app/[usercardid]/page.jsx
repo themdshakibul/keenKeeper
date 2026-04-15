@@ -1,8 +1,14 @@
 import QuickCheckIn from "@/Components/QuickCheckIn/QuickCheckIn";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { LuArchive } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
+
+export const metadata = {
+  title: "KeenKeeper | Friends Details page",
+  description: "This is friends Details pages",
+};
 
 const UserCardIdPage = async ({ params }) => {
   const { usercardid } = await params;
@@ -15,6 +21,10 @@ const UserCardIdPage = async ({ params }) => {
   const friendDetails = friends.find(
     (friend) => friend.id === Number(usercardid),
   );
+
+  if (!friendDetails) {
+    notFound();
+  }
 
   const base = {
     almost_due: "bg-yellow-400 text-white",
