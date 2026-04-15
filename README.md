@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🤝 KeenKeeper: Your Personal Connection Architect
 
-## Getting Started
+**Stay connected. Stay intentional. Never lose touch.**
 
-First, run the development server:
+KeenKeeper hocche ekte modern **Personal Relationship Manager (PRM)** ja apnar social circle-ke organize rakhte ebong bondhuttogulo arektu jotner sathe maintain korte sahojyo kore. Eta sudhu ekta contact list noy, borong apnar communication habits-er ekta smart dashboard.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [https://keen-keeper-dusky.vercel.app](https://keen-keeper-dusky.vercel.app) with your browser to see the result.
+## 🚀 Live Demo
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+🔗 https://keen-keeper-dusky.vercel.app/
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Modern Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+Project-tike fast ebong scalable rakhar jonno use kora hoyeche:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework:** Next.js 15 (App Router, Server & Client Components)
+- **UI/UX:** Tailwind CSS & DaisyUI (Responsive & Accessible)
+- **State Management:** React Context API (Global data flow)
+- **Analytics:** Recharts (Data-driven insights)
+- **Feedback:** React Toastify (Instant notifications)
+- **Icons:** React Icons
+- **Deployment:** Vercel (Edge-optimized hosting)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## ✨ Key Features & Functionality
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📋 Intelligent Friend Profiles
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Sudhu naam thaklei hoy na, proyojon deep insights.
+
+- **Dynamic Status:** Algorithm-er madhyome automatic track hoy status: `On Track`, `Almost Due`, ba `Overdue`.
+- **Relationship Goals:** Protiti bondhur jonno alada frequency set korar subidha (e.g., "Talk once a week").
+- **Tagging System:** 'Family', 'Work', ba 'College'—categorize your world.
+
+### 📞 One-Click Interaction Logic
+
+Communication ke shohoj korte amra integrate korechi quick action triggers:
+
+- **Smart Triggers:** Direct Call, Text, ba Video interaction initiate kora jay.
+- **Auto-Logging:** Protiti interaction-er sathe sathe metadata (type, timestamp) instantly sync hoye jay.
+- **Timeline View:** Ekta chronological list jekhane dekha jay kobe kake koto somoy deya hoyeche.
+
+### 📊 Visual Analytics Dashboard
+
+Data jokhon dekhte sundor hoy, tokhon habit change kora shohoj hoy.
+
+- **Interaction Mix:** Donut charts-er madhyome dekhun apni call besi korchen naki text.
+- **Consistency Score:** Apnar relationship goals koto tuku fulfill hocche tar graphical representation.
+
+---
