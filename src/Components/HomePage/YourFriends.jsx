@@ -1,10 +1,8 @@
+import { getFriends } from "@/lib/friends";
 import FriendsCards from "./FriendsCards";
 
 const YourFriends = async () => {
-  const res = await fetch("http://localhost:3000/yourfriends.json", {
-    cache: "no-store",
-  });
-  const friends = await res.json();
+  const friends = getFriends();
 
   return (
     <section>
